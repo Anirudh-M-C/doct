@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Hospitals
+{% endblock %}
+
+{% block content %}
+<style>
+.card {
+    max-height: 550px; /* Adjust the maximum height as needed */
+}
+</style>
+
+<div style="display: flex;flex-wrap: wrap; justify-content: space-around; padding: 10px;height:100%" class="main d-flex flex-wrap">
+    {% for i in hos %}
+    <div class="card m-2" style="width: 18rem;">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{i.h_name}}</h5>
+          <p class="card-text">{{i.h_description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{i.h_contact}}</li>
+          <a href="{% url 'treatment' %}"><li class="list-group-item">Specialities <span style="font-weight: bold;">{{i.h_specialities}}</span></li></a>
+          <a href="{% url 'doctors_avail' pk=i.pk %}"><li class="list-group-item">Doctors <span style="font-weight: bold;">{{i.h_doctors}}</span></li></a>
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'appointment2' %}"><button style="margin-left: 35px;" type="button" class="btn btn-primary ">BOOK APPOINTMENT</button></a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}

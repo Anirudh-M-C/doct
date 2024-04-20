@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Doctors
+{% endblock %}
+
+{% block content %}
+<div style="padding: 10px;height:100%" class="main">
+    <form method="GET" action="{% url 'search_doctors' %}">
+        <div class="form-group">
+            <label for="hospital_name">Select Hospital:</label>
+            <select class="form-control" id="hospital_name" name="hospital_name">
+                <option value="">-- Select Hospital --</option>
+                {% for hospital in hospitals %}
+                <option value="{{ hospital.h_name }}">{{ hospital.h_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="department_name">Select Department:</label>
+            <select class="form-control" id="department_name" name="department_name">
+                <option value="">-- Select Department --</option>
+                {% for department in departments %}
+                <option value="{{ department.dept_name }}">{{ department.dept_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" style="margin-top: 10px;" class="btn btn-primary">Search</button>
+    </form>
+
+    {% if doctors %}
+    <h2 style="margin-top: 20px; padding-top:12px;padding-bottom:10px;margin-right:20px;" class="bg-success">DOCTORS</h2>
+    <div style="display:flex;flex-wrap: wrap; justify-content: space-around; ">
+        {% for doctor in doctors %}
+        <div class="card text-center mx-3 my-3 doctor-card" style="width: 18rem; display:inline-block;background-color: #faf7f7;">
+            <img src="{{doctor.doc_image.url}}" class="card-img-top" style="height: 250px;width:200px; object-fit: cover;" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">Dr.{{ doctor.doc_name }}</h3>
+              <hr>
+              <p class="card-text" style="font-weight: bold;">{{doctor.doc_spec}}</p>
+              <h6 style="padding-bottom: 10px;"><a style="color: black; text-decoration:none;" href="">
+                 <span class="department-link">{{ doctor.dept_name }} Department</span>
+              </a></h6>
+              <h6 class="text-success">
+                <a style="color: black; text-decoration:none;" href="">
+                    <span class="department-link">{{doctor.h_name}}</span>
+                 </a></h6>
+              <a href="{% url 'appointment' %}"><button type="button" style="margin-top:10px" class="btn btn-success">MAKE AN APPOINTMENT</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    
+    </div>
+   
+    {% else %}
+    <div style="color: red;font-size:15px"><i style="font-size: 20px;padding-top:13px" class="fa-solid fa-circle-info"></i> click on Search to display options</div>
+    <p>No doctors found.</p>
+    {% endif %}
+</div>
+{% endblock %}

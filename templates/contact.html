@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="container">
+        <div class="content">
+            <div class="right-side">
+                <div class="topic-text">Get in touch with us...! Send us a message</div>
+                <p>Please read, understand and accept our terms of use before using this site. Any complaints or grievances regarding the use or information posted on this Site, may be sent to hospital Booking.com</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ formm.as_p }}
+                    <div class="button">
+                        <input type="submit" class="btn btn-success" value="Send Now" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

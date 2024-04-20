@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="{% static '/images/1.jpg'%}" class="d-block w-100" alt="...">
+        <h1 class="carousel-caption"><span style="color: white;font-family: Bebas Neue, sans-serif;font-weight: 400;font-style: normal;font-size:40px">"WHERE THERE IS LOVE THERE IS LIFE." </span><span style="font-size: 30px;color:white;">  - Mahatma Gandhi</span></h1>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static '/images/2.jpg'%}" class="d-block w-100" alt="...">
+        <h1 class="carousel-caption">"HOSPITALITY IS NOT TO CHANGE PEOPLE, BUT TO OFFER THEM SPACE WHERE CHANGE CAN TAKE PLACE."  <span style="font-size: 30px;">  - Henri Nouwen</span></h1>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static '/images/3.jpg'%}" class="d-block w-100" alt="...">
+        <h2 class="carousel-caption"><span style="color: white;font-family: Bebas Neue, sans-serif;font-weight: 400;font-style: normal;font-size:40px">"HEALTH IS THE CROWN ON THE WELL PERSON'S HEAD THAT ONLY THE ILL PERSON CAN SEE."</span><span style="font-size: 30px;color:white"> - Robin Sharma</span></h2>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="noti">
+    <div><h4>LATEST UPDATES</h4></div>
+    <div class="scrolling-text">
+        {% for update in latest_update %}
+            {{ update.latest_update }}
+        {% endfor %}
+    </div>
+  </div>
+  <div class="youtube1">
+    <iframe width="830px" height="500px" src="https://www.youtube.com/embed/RtYwGTMPe1E?si=XetZFqTfsZESGnZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="insure">
+        <h3>HEALTH INSURANCE (COVID-19 Covered)*</h3>
+        <p><span style="color:rgb(184, 185, 184);padding-bottom:35px;">Start Your Health Insurance Journey Today!</span><br><br>
+            Health insurance policy is a product that protects you against the financial implications of a wide variety of health-related expenses, ranging from those caused by minor illnesses and injuries to critical diseases. Therefore, health insurance plans and the cumulative Bonus serve as a protective financial shield for you should you be faced with a major medical expense.
+            
+            Selecting a suitable medical insurance is difficult yet incredibly important for you to have a sufficient degree of preparedness against any sudden and, in some cases, expected medical expenses. Imagine a scenario wherein you are diagnosed with a serious medical condition that requires consistent treatment, hospitalisation, and/or surgery. Or simply take the example of the spread of COVID-19 in India and imagine the various expenses you may have to look after if diagnosed with a COVID-19 infection
+            
+            In such a situation, you would not want to let your medical bills dig a massive hole in your savings or be faced with a financial crisis to pay said bills, will you? Hence it is pivotal to buy a suitable health insurance plan, choose the right sum insured, pay the applicable premium and get insured at the earliest, and we can help you with that.</p>
+    </div>
+  </div>
+
+  <div class="image-flow">
+    <img class="imgg1" src="{% static '/images/20596093.jpg'%}" alt="...">
+    <img class="imgg2" src="{% static '/images/Q8Ukgz.webp'%}" alt="...">
+    <h1>THE HEARTBEAT OF COMMUNITY WELLNESS</h1>
+  </div>
+
+{% endblock %}

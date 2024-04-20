@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+dept
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center" style="padding-top: 40px;"> Departments</h1>
+<hr>
+<div class="main">
+    <div class="card" style="margin-left:20px;margin-right:20px;">
+        <h5 class="card-header">Current Departments</h5>
+        {% for i in dept %}
+        <div class="card-body cardno" style="background-color: rgb(200, 201, 201);" >
+          <h4 class="card-title  pb-1" style="font-weight: 500;">{{i.dept_name}}</h4>
+          <p class="card-text">{{i.dept_description}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div style="background-color: white;height:10px"></div>
+        {% endfor %}
+      </div>
+</div>
+
+
+{% endblock %}

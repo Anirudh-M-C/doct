@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ avail.h_name }}
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <h1>Doctors Available at {{ avail.h_name }}</h1>
+    <ul>
+        {% for doctor in avail.doctors_set.all %}
+            <li>{{ doctor.doc_name }} - {{ doctor.doc_spec }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <section style="    font-weight: bolder;
+    font-family: Staatliches, sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;" class="services">
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="{% static '/images/1.jpg'%}" alt="Card image">
+            <div class="card-img-overlay">
+              <h1 style="font-weight:bolder;text-transform:uppercase" class="card-title">Healthcare Packages</h1>
+              <p style="font-size:30px"  class="card-text">We offer comprehensive healthcare packages tailored to meet the unique needs of individuals and families, including preventive care, wellness programs, and chronic disease management services</p>
+            </div>
+          </div>
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="{% static '/images/2.jpg'%}" alt="Card image">
+            <div class="card-img-overlay">
+              <h1 style="font-weight:bolder;text-transform:uppercase"  class="card-title">Specialized Treatments</h1>
+              <p style="font-size:30px"  class="card-text">From surgical interventions to specialized medical treatments, our platform connects patients with leading healthcare providers offering advanced treatments for various medical conditions.</p>
+            </div>
+          </div>
+          <div class="card bg-dark text-white">
+            <img class="card-img" src="{% static '/images/3.jpg'%}" alt="Card image">
+            <div class="card-img-overlay">
+              <h1  style="font-weight:bolder;text-transform:uppercase" class="card-title">Medical Consultation</h1>
+              <p style="font-size:30px" class="card-text">Our platform offers access to experienced healthcare professionals who provide personalized medical consultations, diagnosis, and treatment recommendations.</p>
+            </div>
+          </div>
+
+        <!-- Add more services as needed -->
+    </section>
+
+{% endblock %}

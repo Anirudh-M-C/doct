@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+Appointment
+{% endblock %}
+
+{% block content %}
+<img class="appointment2-img" src="{% static '/images/doc.webp'%}" alt="">
+<div class="main212">
+    <div class="main1 ">
+
+    
+        <div><h1 class="app2-text">BOOK AN APPOINTMENT</h1></div>
+        
+        <h2 class="text-center">Make An Appointment</h2>
+        
+        <div class="container w-50 p-3 text-center my-5">
+            <form action="" method="POST" class="form-appo2">
+                {{a_form|crispy}}
+                {% csrf_token %}
+                <button class="btn btn-primary mb-4">SUBMIT</button>
+            </form>
+        </div>
+        
+        </div>
+</div>
+{% endblock %}
