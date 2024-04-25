@@ -1,1 +1,2 @@
-Simple hospital management
+Simple hospital management web using django
+
